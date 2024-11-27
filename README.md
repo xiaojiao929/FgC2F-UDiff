@@ -38,20 +38,20 @@ NI_COMPILED_BACKEND="C" pip install --no-build-isolation .
 ```
 where the PyTorch CUDA version matches the output of `nvcc --version`.
 
-## Step-by-Step Guide 
-1. Prerequisites
+# Step-by-Step Guide 
+## Prerequisites
 Before starting, ensure you have the following:
 --A machine with a compatible GPU (NVIDIA recommended) and sufficient VRAM (>=8GB recommended).
 --Python 3.6.9 or higher installed.
 --An environment set up with conda or venv (recommended for dependency isolation).
 
-2. Clone the Repository
+## Clone the Repository
 ```
 git clone https://github.com/xiaojiao929/FgC2F-UDiff.git
 cd FgC2F-UDiff
 ```
 
-3. Set Up the Environment
+## Set Up the Environment
 --Install the required dependencies:
 ```
 pip install -r requirements.txt
@@ -60,7 +60,7 @@ pip install -r requirements.txt
 (This installs all necessary libraries such as PyTorch, torchvision, and other related dependencies.
 If requirements.txt includes specific CUDA or PyTorch versions, verify compatibility with your GPU and adjust the installation if needed.)
 
-5. Prepare the Dataset
+## Prepare the Dataset
 -Download the Dataset: Follow the dataset download instructions (if available in the repository documentation or README).
 
 -Organize the Dataset: Ensure the dataset is structured correctly. Use the recommended directory structure:
@@ -76,7 +76,7 @@ If requirements.txt includes specific CUDA or PyTorch versions, verify compatibi
 python preprocess.py --input_dir ./data --output_dir ./processed_data
 ```
 
-5. Train the Model
+## Train the Model
 -To train the model from scratch:
 ```
 python train.py --config configs/default.yaml
@@ -88,7 +88,7 @@ python train.py --config configs/default.yaml
 python train.py --config configs/default.yaml --resume ./checkpoints/checkpoint.pth
 ```
 
-6. Test/Evaluate the Model
+## Test/Evaluate the Model
 - To evaluate the trained model:
 ```
   python evaluate.py --config configs/default.yaml --checkpoint ./checkpoints/best_model.pth
@@ -100,7 +100,7 @@ python train.py --config configs/default.yaml --resume ./checkpoints/checkpoint.
 python evaluate.py --config configs/default.yaml --test_data ./processed_data/test
 ```
 
-7. Generate Results
+## Generate Results
 -To use the trained model for inference (e.g., synthesizing medical images):
 ```
 python inference.py --config configs/default.yaml --checkpoint ./checkpoints/best_model.pth --input ./sample_input --output ./generated_results
@@ -108,7 +108,7 @@ python inference.py --config configs/default.yaml --checkpoint ./checkpoints/bes
 (--Replace ./sample_input with the directory containing input images.
 --The generated results will be saved in the ./generated_results folder.)
 
-9. Visualize the Results
+## Visualize the Results
 -Use the visualization scripts provided:
 ```
 python visualize.py --results_dir ./generated_results --save_dir ./visualized_output
@@ -119,7 +119,7 @@ python visualize.py --results_dir ./generated_results --save_dir ./visualized_ou
 python -m scripts.plot_results --results ./generated_results
 ```
 
-9. Reproducing the Reported Metrics
+## Reproducing the Reported Metrics
 -Run the evaluation script to compute PSNR, SSIM, or other metrics:
 ```
 python metrics.py --ground_truth ./processed_data/test --predictions ./generated_results
@@ -127,7 +127,7 @@ python metrics.py --ground_truth ./processed_data/test --predictions ./generated
 
 -Ensure the paths for ground_truth and predictions point to the correct directories.
 
-10. Troubleshooting
+## Troubleshooting
 -Check the README.md or docs folder for additional information on specific commands or arguments.
 
 -Verify your environment setup using:
