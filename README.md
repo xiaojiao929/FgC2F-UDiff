@@ -60,6 +60,7 @@ pip install -r requirements.txt
 ```
 
 (This installs all necessary libraries such as PyTorch, torchvision, and other related dependencies.
+
 If requirements.txt includes specific CUDA or PyTorch versions, verify compatibility with your GPU and adjust the installation if needed.)
 
 ## 2.4 Prepare the Dataset
@@ -108,6 +109,7 @@ python evaluate.py --config configs/default.yaml --test_data ./processed_data/te
 python inference.py --config configs/default.yaml --checkpoint ./checkpoints/best_model.pth --input ./sample_input --output ./generated_results
 ```
 (--Replace ./sample_input with the directory containing input images.
+
 --The generated results will be saved in the ./generated_results folder.)
 
 ## 2.8 Visualize the Results
@@ -141,5 +143,6 @@ python check_env.py
 
 ## Notes
 -The YAML configuration files (e.g., configs/default.yaml) are central to defining the training and inference parameters. Modify them as needed for your experiments.
+
 -If any pretrained models are available, download them using the provided links and place them in the checkpoints directory.
 
