@@ -40,8 +40,11 @@ where the PyTorch CUDA version matches the output of `nvcc --version`.
 # 2. Step-by-Step Guide 
 ## 2.1 Prerequisites
 Before starting, ensure you have the following:
+
 --A machine with a compatible GPU (NVIDIA recommended) and sufficient VRAM (>=8GB recommended).
+
 --Python 3.6.9 or higher installed.
+
 --An environment set up with conda or venv (recommended for dependency isolation).
 
 ## 2.2 Clone the Repository
